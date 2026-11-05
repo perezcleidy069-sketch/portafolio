@@ -1,41 +1,52 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Presentation</title>
+    <meta name="description" content="Sobre mí: conoce a Cleidy Pérez, estudiante de Desarrollo de Software y apasionada por las soluciones digitales.">
+    <title>Sobre mí | Cleidy Pérez</title>
     <link rel="stylesheet" href="./CSS/style.css">
 </head>
-<body id="subfondo"  class="container">
-    <header class="header">
-        <div class="header__overlay">
-            <nav class="navi">
-                <ul class="navi__list">
-                    <li class="navi__items" id="logo__navi"><a class="logo__enlance" href="./index.html"><img class="imagen__enlance" src="./IMG/logo.png" alt="Enlace a la página de principal"></a></li>
-                    <li class="navi__items"><a class="navi__link" href="./information.html">Sobre mí</a></li>
-                    <li class="navi__items"><a class="navi__link" href="/skills.html">Mis habilidades</a></li>
-                    <li class="navi__items"><a class="navi__link" href="./projects.html">Mis proyectos</a></li>
-                    <li class="navi__items"><a class="navi__link" href="./contacts.html">Mi contacto</a></li>
+<body>
+    <header class="site-header">
+        <div class="site-header__inner">
+            <a class="brand" href="./index.html" aria-label="Cleidy Pérez, inicio">
+                <span class="brand__mark" aria-hidden="true">CP</span>
+                <span>Cleidy Pérez</span>
+            </a>
+            <nav class="site-nav" aria-label="Navegación principal">
+                <ul class="site-nav__list">
+                    <li><a class="site-nav__link" href="./presentacion.html" aria-current="page">Sobre mí</a></li>
+                    <li><a class="site-nav__link" href="./information.html">Trayectoria</a></li>
+                    <li><a class="site-nav__link" href="./skills.html">Habilidades</a></li>
+                    <li><a class="site-nav__link" href="./projects.html">Proyectos</a></li>
+                    <li><a class="site-nav__link" href="./contacts.html">Contacto</a></li>
                 </ul>
             </nav>
         </div>
     </header>
-
-    <main class="personal">
-        <h1 class="personal__name">Soy Cleidy Priscila Pérez Casia</h1>
-        <div class="avatar">
-            <img class="personal__avatar" src="./IMG/avatar_cleidyPerez.png" alt="Cleidy's_avatar">
-            <div class="shadow"></div>
-        </div>
-        <figcaption class="profession">Programadora en proceso</figcaption>
-        <p class="personal__profession">Soy una persona apasionada en la programación, que le gusta nuevos retos en la vida.</p>
-            
-
+    <main class="page-shell">
+        <p class="eyebrow">Perfil profesional</p>
+        <h1 class="page-heading">Sobre mí</h1>
+        <section class="profile card" aria-labelledby="profile-title">
+            <div class="profile__visual">
+                <div class="profile__portrait">
+                    <span class="profile__shadow" aria-hidden="true"></span>
+                    <img class="profile__avatar" src="./IMG/portafolio.png" alt="Fotografía profesional de Cleidy Pérez">
+                </div>
+            </div>
+            <div class="profile__content">
+                <p class="eyebrow">Hola, soy</p>
+                <h2 class="profile__title" id="profile-title">Cleidy Priscila Pérez Casia</h2>
+                <p class="profile__role">Estudiante de Técnico en Desarrollo de Software</p>
+                <p class="profile__description">Apasionada por la tecnología y las soluciones digitales para resolver problemas e incertidumbres que surgen al programar. Cuento con experiencia práctica en Campus Lands, donde he diseñado arquitectura backend, implementado interfaces frontend y trabajado en la seguridad y funcionalidad de aplicaciones web.</p>
+                <p class="profile__description">Más allá de las líneas de código, me defino como una persona alegre, sociable, amable y profundamente empática. Creo firmemente que el mejor software nace de la escucha activa, el trabajo en equipo y una comunicación abierta.</p>
+                <p class="profile__description">Mi actitud positiva, creatividad y dedicación me permiten transformar retos complejos en experiencias fluidas, funcionales y centradas en el usuario.</p>
+            </div>
+        </section>
     </main>
-    <footer class="piedpagia">
-        <div class="final__pagina">
-            <p class="letter__pagina">&copy: Portafio de Cleidy Pérez. Derechos reservados</p>
-        </div>
-     
+    <footer class="site-footer">
+        <p>&copy; 2026 Cleidy Pérez. Todos los derechos reservados.</p>
+    </footer>
 </body>
 </html>

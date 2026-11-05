@@ -1,49 +1,91 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects</title>
-    <link rel="stylesheet" href="./CSS/asd.css">
+    <meta name="description" content="Proyectos destacados de desarrollo web, APIs y gestión de datos creados por Cleidy Pérez.">
+    <title>Proyectos | Cleidy Pérez</title>
+    <link rel="stylesheet" href="./CSS/style.css">
 </head>
-<body id="ha" class="container">
-    <header class="me" id="container">
-        <div class="enlan">
-            <nav class="naga">
-                <ul class="nagave__li">
-                     <li class="navig__item" id="logo__navi"><a class="logo__enlance" href="./index.html"><img class="imagen__enlance" src="./IMG/logo.png" alt="Enlace a la página de principal"></a></li>
-                    <li class="navig__item"><a class="navis__lin" href="./presentacion.html">home</a></li>
-                    <li class="navig__item"><a class="navis__li" href="./presentacion.html">home</a></li>
-                    <li class="navig__item"><a class="navis__li" href="./information.html">Sobre mí</a></li>
-                    <li class="navig__item"><a class="navis__li" href="./skills.html">Mis habilidades</a></li>
-                    <li class="navig__item"><a class="navis__li" href="./contacts.html">Mis contactos</a></li>
+<body>
+    <header class="site-header">
+        <div class="site-header__inner">
+            <a class="brand" href="./index.html" aria-label="Cleidy Pérez, inicio">
+                <span class="brand__mark" aria-hidden="true">CP</span>
+                <span>Cleidy Pérez</span>
+            </a>
+            <nav class="site-nav" aria-label="Navegación principal">
+                <ul class="site-nav__list">
+                    <li><a class="site-nav__link" href="./presentacion.html">Sobre mí</a></li>
+                    <li><a class="site-nav__link" href="./information.html">Trayectoria</a></li>
+                    <li><a class="site-nav__link" href="./skills.html">Habilidades</a></li>
+                    <li><a class="site-nav__link" href="./projects.html" aria-current="page">Proyectos</a></li>
+                    <li><a class="site-nav__link" href="./contacts.html">Contacto</a></li>
                 </ul>
             </nav>
         </div>
-
-        <main class="prince">
-            <h2 class="prince__subtittle">Mis proyectos</h2>
-            <article class="project">
-                <h4 class="project__name">Proyecto No.1</h4>
-                <p class="project__description">Este proyecto en un inventario donde las administradores pueden cambiar, eliminar productos, pero también hay una área donde el cliente busca los productos que necesita, agregar y ver todos los productos que hay en general o por categorías.</p>
-                <a class="project__link" href="https://github.com/perezcleidy069-sketch/Sistema-de-Inventario"  target="_blank"> Click aquí</a>
-                <img class="project__image" src="./IMG/proyecto.png" alt="Imagen de github de un proyecto">
+    </header>
+    <main class="page-shell">
+        <p class="eyebrow">Aprender haciendo</p>
+        <h1 class="page-heading">Proyectos destacados</h1>
+        <p class="page-intro">Soluciones que combinan desarrollo web, APIs, bases de datos y herramientas para resolver necesidades reales.</p>
+        <section class="project-grid" aria-label="Proyectos destacados">
+            <article class="project-card card">
+                <img class="project-card__image project-card__image--preview" src="./IMG/geekrank-preview.svg" alt="Vista ilustrativa del catálogo y ranking de GeekRank">
+                <div class="project-card__body">
+                    <h2 class="project-card__title">GeekRank · Karen Flix</h2>
+                    <p class="project-card__description">Plataforma para descubrir y valorar películas y series. El frontend consume una API REST independiente para mostrar el catálogo, las reseñas y el ranking, e incluye flujos para usuarios y administradores.</p>
+                    <p class="project-card__description"><strong>Trabajo realizado:</strong> interfaz web y conexión con API en el frontend; endpoints, autenticación y gestión de datos en el backend.</p>
+                    <ul class="project-card__tags" aria-label="Tecnologías">
+                        <li class="project-card__tag">JavaScript</li>
+                        <li class="project-card__tag">Node.js</li>
+                        <li class="project-card__tag">Express</li>
+                        <li class="project-card__tag">MySQL</li>
+                        <li class="project-card__tag">JWT</li>
+                    </ul>
+                    <div class="project-card__links">
+                        <a class="text-link" href="https://github.com/perezcleidy069-sketch/greekrank" target="_blank" rel="noopener noreferrer">Frontend <span aria-hidden="true">&rarr;</span></a>
+                        <a class="text-link" href="https://github.com/perezcleidy069-sketch/karen-flix" target="_blank" rel="noopener noreferrer">API backend <span aria-hidden="true">&rarr;</span></a>
+                    </div>
+                </div>
             </article>
-            <article class="second">
-                <h4 class="second__name">Proyecto No.2</h4>
-                <p class="second__description">Esto es una calculadora donde se puede realizar calculos matemáticos básicos.</p>
-                <img class="second__image" src="./IMG/ruleta.png" alt="Imagen de una ruleta">
+            <article class="project-card card">
+                <img class="project-card__image project-card__image--preview" src="./IMG/gym-cli-preview.svg" alt="Vista ilustrativa del menú de la aplicación Gestión de gimnasio CLI">
+                <div class="project-card__body">
+                    <h2 class="project-card__title">Gestión de gimnasio CLI</h2>
+                    <p class="project-card__description">Aplicación de consola conectada a MySQL para gestionar clientes, metas físicas, rutinas, nutrición, contratos e ingresos y egresos del gimnasio.</p>
+                    <p class="project-card__description"><strong>Trabajo realizado:</strong> organización de módulos CRUD y uso de patrones Factory y Observer.</p>
+                    <ul class="project-card__tags" aria-label="Tecnologías">
+                        <li class="project-card__tag">Node.js</li>
+                        <li class="project-card__tag">MySQL</li>
+                        <li class="project-card__tag">CRUD</li>
+                        <li class="project-card__tag">Factory</li>
+                        <li class="project-card__tag">Observer</li>
+                    </ul>
+                    <div class="project-card__links">
+                        <a class="text-link" href="https://github.com/perezcleidy069-sketch/gestion-gimnasio-cli" target="_blank" rel="noopener noreferrer">Ver proyecto en GitHub <span aria-hidden="true">&rarr;</span></a>
+                    </div>
+                </div>
             </article>
-            <article class="third">
-                <h4 class="third__name">Proyecto No.3</h4>
-                <p class="third__description">Este es una ruleta que gira para seleccionar un que apunte la flecha, donde se puede agregar o elimanar nombres.</p>
-                <img class="third__imagen" src="./IMG/calculadora.png" alt="Imagen de una calculadora">
+            <article class="project-card card">
+                <img class="project-card__image" src="./IMG/proyecto.png" alt="Vista del repositorio del sistema de inventario">
+                <div class="project-card__body">
+                    <h2 class="project-card__title">Sistema de inventario</h2>
+                    <p class="project-card__description">Sistema en Python para administrar productos y permitir que los clientes consulten el inventario general o por categorías.</p>
+                    <p class="project-card__description"><strong>Trabajo realizado:</strong> funciones para gestionar productos y facilitar su consulta por categoría.</p>
+                    <ul class="project-card__tags" aria-label="Tecnologías">
+                        <li class="project-card__tag">Python</li>
+                        <li class="project-card__tag">Inventario</li>
+                    </ul>
+                    <div class="project-card__links">
+                        <a class="text-link" href="https://github.com/perezcleidy069-sketch/Sistema-de-Inventario" target="_blank" rel="noopener noreferrer">Ver proyecto en GitHub <span aria-hidden="true">&rarr;</span></a>
+                    </div>
+                </div>
             </article>
-        </main>
-        <footer class="piedpagi">
-            <div class="final__pagina">
-                <p class="letter__pagina">&copy: Portafio de Cleidy Pérez. Derechos reservados</p>
-            </div>
-        </footer>
+        </section>
+    </main>
+    <footer class="site-footer">
+        <p>&copy; 2026 Cleidy Pérez. Todos los derechos reservados.</p>
+    </footer>
 </body>
 </html>

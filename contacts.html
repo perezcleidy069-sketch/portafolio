@@ -1,45 +1,55 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contacts</title>
-    <link rel="stylesheet" href="./CSS/asd.css">
+    <meta name="description" content="Encuentra los canales de contacto y perfiles de Cleidy Pérez.">
+    <title>Contacto | Cleidy Pérez</title>
+    <link rel="stylesheet" href="./CSS/style.css">
 </head>
-<body id="habi" class="container">
-    <header class="men" id="menTerciario">
-        <div class="enlanc">
-            <nav class="nagav">
-                <ul class="nagave__lis">
-                     <li class="navis__item" id="logo__navi"><a class="logo__enlance" href="./index.html"><img class="imagen__enlance" src="./IMG/logo.png" alt="Enlace a la página de principal"></a></li>
-                    <li class="navis__item"><a class="navis__lin" href="./presentacion.html">home</a></li>
-                    <li class="navis__item"><a class="navis__lin" href="./information.html">Sobre mí</a></li>
-                    <li class="navis__item"><a class="navis__lin" href="./skills.html">Mis habilidades</a></li>
-                    <li class="navis__item"><a class="navis__lin" href="./projects.html">Mis proyectos</a></li>
+<body>
+    <header class="site-header">
+        <div class="site-header__inner">
+            <a class="brand" href="./index.html" aria-label="Cleidy Pérez, inicio">
+                <span class="brand__mark" aria-hidden="true">CP</span>
+                <span>Cleidy Pérez</span>
+            </a>
+            <nav class="site-nav" aria-label="Navegación principal">
+                <ul class="site-nav__list">
+                    <li><a class="site-nav__link" href="./presentacion.html">Sobre mí</a></li>
+                    <li><a class="site-nav__link" href="./information.html">Trayectoria</a></li>
+                    <li><a class="site-nav__link" href="./skills.html">Habilidades</a></li>
+                    <li><a class="site-nav__link" href="./projects.html">Proyectos</a></li>
+                    <li><a class="site-nav__link" href="./contacts.html" aria-current="page">Contacto</a></li>
                 </ul>
             </nav>
         </div>
-        <div class="contact">
-            <h3 class="contact__title">Mis contactos</h3>
-            Whatsapp:
-            <a href="https://web.whatsapp.com/" target="_blank">
-                <img class="imagen" src="./IMG/whatsapp.png" alt="Ir a email"><br><br>
+    </header>
+    <main class="page-shell">
+        <p class="eyebrow">Conectemos</p>
+        <h1 class="page-heading">Contacto</h1>
+        <p class="page-intro">Puedes escribirme por WhatsApp o correo, o visitar mis perfiles profesionales.</p>
+        <section class="contact-grid" aria-label="Canales de contacto">
+            <a class="contact-card card" href="https://wa.me/50230424472" target="_blank" rel="noopener noreferrer">
+                <img class="contact-card__image" src="./IMG/whatsapp.png" alt="">
+                <h2 class="contact-card__title">WhatsApp</h2>
             </a>
-            <p>Github:</p>
-            <a href="https://github.com/" target="_blank">
-                <img class="imagen" src="./IMG/github.png" alt="ir a github"><br><br>
+            <a class="contact-card card" href="https://github.com/perezcleidy069-sketch" target="_blank" rel="noopener noreferrer">
+                <img class="contact-card__image" src="./IMG/github.png" alt="">
+                <h2 class="contact-card__title">GitHub</h2>
             </a>
-            <p>Email:</p>
-            <a href="https://mail.google.com" target="_blank">
-                <img class="imagen" src="./IMG/email.png" alt="ir a whatsapp">
-            </a>   
-        </div>
+            <a class="contact-card card" href="https://www.linkedin.com/in/cleidy-p%C3%A9rez-a107b226b/" target="_blank" rel="noopener noreferrer">
+                <img class="contact-card__image" src="./IMG/linkedin.svg" alt="">
+                <h2 class="contact-card__title">LinkedIn</h2>
+            </a>
+            <a class="contact-card card" href="mailto:perezcleidy069@gmail.com">
+                <img class="contact-card__image" src="./IMG/email.png" alt="">
+                <h2 class="contact-card__title">Correo electrónico</h2>
+            </a>
+        </section>
     </main>
-    <footer class="piedpagia">
-        <div class="final__pagina">
-            <p class="letter__pagina">&copy: Portafio de Cleidy Pérez. Derechos reservados</p>
-        </div>
+    <footer class="site-footer">
+        <p>&copy; 2026 Cleidy Pérez. Todos los derechos reservados.</p>
     </footer>
-
 </body>
 </html>
