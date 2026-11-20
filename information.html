@@ -3,11 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#07040f">
     <meta name="description" content="Trayectoria profesional, formación y proyectos de desarrollo de software de Cleidy Pérez.">
     <title>Trayectoria | Cleidy Pérez</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Orbitron:wght@400;500;700;900&family=JetBrains+Mono:wght@400;500&display=swap">
     <link rel="stylesheet" href="./CSS/style.css">
 </head>
 <body>
+    <canvas id="star-canvas" aria-hidden="true"></canvas>
+
+    <div id="cursor-dot" aria-hidden="true"></div>
+    <div id="cursor-ring" aria-hidden="true"></div>
+    <div class="hud-grid" aria-hidden="true"></div>
+
     <header class="site-header">
         <div class="site-header__inner">
             <a class="brand" href="./index.html" aria-label="Cleidy Pérez, inicio">
@@ -17,7 +27,6 @@
             <nav class="site-nav" aria-label="Navegación principal">
                 <ul class="site-nav__list">
                     <li><a class="site-nav__link" href="./presentacion.html">Sobre mí</a></li>
-                    <li><a class="site-nav__link" href="./information.html" aria-current="page">Trayectoria</a></li>
                     <li><a class="site-nav__link" href="./skills.html">Habilidades</a></li>
                     <li><a class="site-nav__link" href="./projects.html">Proyectos</a></li>
                     <li><a class="site-nav__link" href="./contacts.html">Contacto</a></li>
@@ -25,59 +34,76 @@
             </nav>
         </div>
     </header>
+
     <main class="page-shell">
         <p class="eyebrow">Experiencia, formación y proyectos</p>
         <h1 class="page-heading">Mi trayectoria</h1>
         <p class="page-intro">Un recorrido de aprendizaje práctico en desarrollo de software, desde aplicaciones backend hasta experiencias móviles.</p>
 
+        <!-- Experiencia práctica -->
         <section class="section-block" aria-labelledby="experience-title">
             <h2 class="section-title" id="experience-title">Experiencia práctica</h2>
             <div class="resume-list">
-                <article class="resume-card card">
+                <article class="resume-card card" id="exp-fitkid">
                     <div class="resume-card__top">
                         <div>
                             <h3 class="resume-card__title">Fit-Kid</h3>
-                            <p class="resume-card__subtitle">Proyecto práctico en Campus Lands · En curso</p>
+                            <p class="resume-card__subtitle">Proyecto práctico en Campus Lands</p>
                         </div>
-                        <span class="resume-card__date">En curso</span>
+                        <span class="resume-card__date" aria-label="Estado: en curso">En curso</span>
                     </div>
-                    <p class="resume-card__description"><strong>Mi aporte:</strong> lidero el desarrollo de una aplicación móvil infantil para promover el ejercicio y la hidratación mediante 15 niveles interactivos. Diseñé su arquitectura en React Native e integré captura de movimiento en tiempo real con visión artificial y MediaPipe Pose, procesada directamente en el dispositivo.</p>
+                    <p class="resume-card__description"><strong style="color:var(--text-primary)">Mi aporte:</strong> lidero el desarrollo de una aplicación móvil infantil para promover el ejercicio y la hidratación mediante 15 niveles interactivos. Diseñé su arquitectura en React Native e integré captura de movimiento en tiempo real con visión artificial y MediaPipe Pose, procesada directamente en el dispositivo.</p>
                     <p class="resume-card__description">También implementé una estrategia offline-first con AsyncStorage e integración con Firebase, con enfoque en ofrecer una experiencia fluida y compatible con Android e iOS.</p>
                 </article>
             </div>
         </section>
 
+        <!-- Formación académica -->
         <section class="section-block" aria-labelledby="education-title">
             <h2 class="section-title" id="education-title">Formación académica</h2>
-            <article class="resume-card card">
+            <article class="resume-card card" id="edu-campus">
                 <div class="resume-card__top">
                     <div>
                         <h3 class="resume-card__title">Técnico en Desarrollo de Software</h3>
                         <p class="resume-card__subtitle">Campuslands GT</p>
                     </div>
-                    <span class="resume-card__date">2026 · En curso</span>
+                    <span class="resume-card__date" aria-label="Estado: en curso">2026 · En curso</span>
                 </div>
-                <p class="resume-card__description">Formación práctica en desarrollo de software, programación y creación de aplicaciones.</p>
+                <p class="resume-card__description">Formación práctica en desarrollo de software, programación y creación de aplicaciones modernas.</p>
             </article>
         </section>
 
+        <!-- Proyecto destacado -->
         <section class="section-block" aria-labelledby="project-title">
             <h2 class="section-title" id="project-title">Proyecto destacado</h2>
-            <div class="resume-list resume-list--spaced">
-                <article class="resume-card card">
-                    <div class="resume-card__top">
-                        <div>
-                            <h3 class="resume-card__title">Gestión de gimnasio</h3>
-                            <p class="resume-card__subtitle">Proyecto de backend y aplicación CLI</p>
-                        </div>
+            <article class="resume-card card" id="exp-gym">
+                <div class="resume-card__top">
+                    <div>
+                        <h3 class="resume-card__title">Gestión de gimnasio</h3>
+                        <p class="resume-card__subtitle">Proyecto de backend y aplicación CLI</p>
                     </div>
-                    <p class="resume-card__description">Desarrollo de backend y aplicaciones de línea de comandos con Node.js y JavaScript, con operaciones CRUD conectadas a MySQL y patrones Factory y Observer para organizar la gestión de la información.</p>
-                </article>
-            </div>
+                </div>
+                <p class="resume-card__description">Desarrollo de backend y aplicaciones de línea de comandos con Node.js y JavaScript, con operaciones CRUD conectadas a MySQL y patrones Factory y Observer para organizar la gestión de la información.</p>
+            </article>
         </section>
     </main>
+
     <footer class="site-footer">
-        <p>&copy; 2026 Cleidy Pérez. Todos los derechos reservados.</p>
+        <p>&copy; 2026 Cleidy Pérez &nbsp;·&nbsp; Todos los derechos reservados</p>
     </footer>
+
+    <div id="toast" role="status" aria-live="polite"></div>
+    <div id="konami-overlay" role="dialog" aria-modal="true" aria-labelledby="konami-title">
+        <div class="konami-content">
+            <p class="konami-title" id="konami-title">✦ CÓDIGO DESBLOQUEADO ✦</p>
+            <p class="konami-sub">¡Encontraste el Easter Egg del Universo CP!</p>
+            <button class="konami-close" id="konami-close">[ ESC ] Cerrar</button>
+        </div>
+    </div>
+
+    <script src="./JS/stars.js" defer></script>
+    <script src="./JS/cursor.js" defer></script>
+    <script src="./JS/game-effects.js" defer></script>
+    <script src="./JS/animations.js" defer></script>
 </body>
 </html>

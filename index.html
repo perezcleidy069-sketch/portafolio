@@ -3,32 +3,150 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#fffaf2">
-    <meta name="description" content="Portafolio personal de Cleidy Priscila Pérez Casia, estudiante de programación.">
+    <meta name="theme-color" content="#07040f">
+    <meta name="description" content="Portafolio de Cleidy Priscila Pérez Casia — Desarrolladora de Software apasionada por la tecnología y las soluciones digitales.">
     <title>Cleidy Pérez | Portafolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Orbitron:wght@400;500;700;900&family=JetBrains+Mono:wght@400;500&display=swap">
     <link rel="stylesheet" href="./CSS/style.css">
 </head>
 <body>
+
+    <!-- ── Cinematic boot loader ───────────────── -->
+    <div id="loader-overlay" aria-label="Cargando portafolio" role="status">
+        <p class="loader__logo">CP</p>
+        <div class="loader__terminal">
+            <div class="loader__terminal-bar">
+                <span class="loader__terminal-dot"></span>
+                <span class="loader__terminal-dot"></span>
+                <span class="loader__terminal-dot"></span>
+                <span class="loader__terminal-title">universo-cp — boot</span>
+            </div>
+            <div id="loader-lines"></div>
+            <div class="loader__progress-wrap">
+                <div class="loader__progress-track">
+                    <div id="loader-bar"></div>
+                </div>
+                <div class="loader__progress-label">
+                    <span>SISTEMA</span>
+                    <span id="loader-percent">0%</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ── Star field canvas (always visible) ─── -->
+    <canvas id="star-canvas" aria-hidden="true"></canvas>
+
+    <!-- Custom cursor -->
+    <div id="cursor-dot" aria-hidden="true"></div>
+    <div id="cursor-ring" aria-hidden="true"></div>
+
+    <!-- HUD grid background -->
+    <div class="hud-grid" aria-hidden="true"></div>
+
+    <!-- Header -->
     <header class="site-header">
         <div class="site-header__inner">
             <a class="brand" href="./index.html" aria-label="Cleidy Pérez, inicio">
                 <span class="brand__mark" aria-hidden="true">CP</span>
                 <span>Cleidy Pérez</span>
             </a>
+            <nav class="site-nav" aria-label="Navegación principal">
+                <ul class="site-nav__list">
+                    <li><a class="site-nav__link" href="./presentacion.html">Sobre mí</a></li>
+                    <li><a class="site-nav__link" href="./skills.html">Habilidades</a></li>
+                    <li><a class="site-nav__link" href="./projects.html">Proyectos</a></li>
+                    <li><a class="site-nav__link" href="./contacts.html">Contacto</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
-    <main class="home">
+
+    <!-- Hero -->
+    <main class="home" aria-label="Inicio">
+        <!-- Particle canvas -->
+        <canvas id="particles-canvas" aria-hidden="true"></canvas>
+
+        <!-- HUD corners -->
+        <span class="hud-corner hud-corner--tl" aria-hidden="true"></span>
+        <span class="hud-corner hud-corner--tr" aria-hidden="true"></span>
+        <span class="hud-corner hud-corner--bl" aria-hidden="true"></span>
+        <span class="hud-corner hud-corner--br" aria-hidden="true"></span>
+
         <div class="home__content">
-            <p class="eyebrow">Portafolio personal</p>
-            <h1 class="home__title">Ideas, aprendizaje y <span>tecnología</span></h1>
-            <p class="home__description">Soy Cleidy Pérez, estudiante del Técnico en Desarrollo de Software. Me apasiona crear soluciones digitales que conviertan retos complejos en experiencias útiles.</p>
-            <div class="home__actions">
-                <a class="button" href="./presentacion.html">Sobre mí <span aria-hidden="true">&rarr;</span></a>
-                <a class="button button--secondary" href="./projects.html">Ver proyectos</a>
-                <a class="home__contact-link" href="./contacts.html">Contacto</a>
+            <!-- Status badge -->
+            <div class="home__status" aria-label="Estado: disponible">
+                <span class="home__status-dot" aria-hidden="true"></span>
+                Disponible para proyectos
             </div>
-            <p class="home__hint">Cleidy Priscila Pérez Casia</p>
+
+            <!-- Main title -->
+            <h1 class="home__title">
+                <span class="home__title-name">
+                    <span class="glitch" data-text="Cleidy Pérez">Cleidy Pérez</span>
+                </span>
+            </h1>
+
+            <!-- Typing role -->
+            <div class="home__role-container" aria-live="polite">
+                <span class="home__role-prefix">Soy</span>
+                <span class="home__role-text" id="typing-role" aria-label="Rol profesional"></span>
+                <span class="typing-cursor" aria-hidden="true"></span>
+            </div>
+
+            <p class="home__description">
+                Apasionada por la tecnología y las soluciones digitales.<br>
+                Construyo experiencias web que combinan diseño, funcionalidad y código limpio.
+            </p>
+
+            <div class="home__actions">
+                <a class="button" href="./presentacion.html" id="cta-about">
+                    <span>Sobre mí</span>
+                    <span aria-hidden="true">→</span>
+                </a>
+                <a class="button button--ghost" href="./projects.html" id="cta-projects">
+                    <span>Proyectos</span>
+                </a>
+                <a class="button button--ghost" href="./projects.html#applications" id="cta-apps">
+                    <span>Aplicaciones</span>
+                </a>
+            </div>
+
+            <!-- Secondary links -->
+            <div class="home__secondary-links" aria-label="Accesos rápidos">
+                <a href="./skills.html" id="link-skills-hero">// Habilidades</a>
+                <span aria-hidden="true">·</span>
+                <a href="./contacts.html" id="link-contact-hero">// Contacto</a>
+            </div>
+        </div>
+
+        <!-- Scroll indicator -->
+        <div class="home__scroll" aria-hidden="true">
+            <span class="home__scroll-line"></span>
+            <span>scroll</span>
         </div>
     </main>
+
+    <!-- Toast notification -->
+    <div id="toast" role="status" aria-live="polite"></div>
+
+    <!-- Konami Easter Egg Overlay -->
+    <div id="konami-overlay" role="dialog" aria-modal="true" aria-labelledby="konami-title">
+        <div class="konami-content">
+            <p class="konami-title" id="konami-title">✦ CÓDIGO DESBLOQUEADO ✦</p>
+            <p class="konami-sub">¡Encontraste el Easter Egg del Universo CP!<br>¡Eres un/a verdadero/a gamer!</p>
+            <button class="konami-close" id="konami-close">[ ESC ] Cerrar</button>
+        </div>
+    </div>
+
+    <!-- Scripts — loader first so it shows before anything else -->
+    <script src="./JS/loader.js"></script>
+    <script src="./JS/stars.js" defer></script>
+    <script src="./JS/cursor.js" defer></script>
+    <script src="./JS/particles.js" defer></script>
+    <script src="./JS/game-effects.js" defer></script>
+    <script src="./JS/animations.js" defer></script>
 </body>
 </html>

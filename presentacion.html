@@ -3,11 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Sobre mí: conoce a Cleidy Pérez, estudiante de Desarrollo de Software y apasionada por las soluciones digitales.">
+    <meta name="theme-color" content="#07040f">
+    <meta name="description" content="Sobre mí: conoce a Cleidy Pérez, estudiante de Desarrollo de Software apasionada por las soluciones digitales.">
     <title>Sobre mí | Cleidy Pérez</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Orbitron:wght@400;500;700;900&family=JetBrains+Mono:wght@400;500&display=swap">
     <link rel="stylesheet" href="./CSS/style.css">
 </head>
 <body>
+    <canvas id="star-canvas" aria-hidden="true"></canvas>
+
+    <div id="cursor-dot" aria-hidden="true"></div>
+    <div id="cursor-ring" aria-hidden="true"></div>
+    <div class="hud-grid" aria-hidden="true"></div>
+
     <header class="site-header">
         <div class="site-header__inner">
             <a class="brand" href="./index.html" aria-label="Cleidy Pérez, inicio">
@@ -17,7 +27,6 @@
             <nav class="site-nav" aria-label="Navegación principal">
                 <ul class="site-nav__list">
                     <li><a class="site-nav__link" href="./presentacion.html" aria-current="page">Sobre mí</a></li>
-                    <li><a class="site-nav__link" href="./information.html">Trayectoria</a></li>
                     <li><a class="site-nav__link" href="./skills.html">Habilidades</a></li>
                     <li><a class="site-nav__link" href="./projects.html">Proyectos</a></li>
                     <li><a class="site-nav__link" href="./contacts.html">Contacto</a></li>
@@ -25,28 +34,95 @@
             </nav>
         </div>
     </header>
+
     <main class="page-shell">
         <p class="eyebrow">Perfil profesional</p>
         <h1 class="page-heading">Sobre mí</h1>
-        <section class="profile card" aria-labelledby="profile-title">
+
+        <!-- Stats RPG -->
+        <div class="stats-row" aria-label="Estadísticas">
+            <div class="stat-card reveal">
+                <span class="stat-card__icon" aria-hidden="true">⚡</span>
+                <div class="stat-card__number count-up" data-target="3" data-suffix="+">0+</div>
+                <div class="stat-card__label">Proyectos completados</div>
+            </div>
+            <div class="stat-card reveal">
+                <span class="stat-card__icon" aria-hidden="true">🧠</span>
+                <div class="stat-card__number count-up" data-target="5" data-suffix="">0</div>
+                <div class="stat-card__label">Tecnologías dominadas</div>
+            </div>
+            <div class="stat-card reveal">
+                <span class="stat-card__icon" aria-hidden="true">🎓</span>
+                <div class="stat-card__number count-up" data-target="2" data-suffix="°">0°</div>
+                <div class="stat-card__label">Año en campus</div>
+            </div>
+        </div>
+
+        <!-- Profile card -->
+        <section class="profile card reveal" aria-labelledby="profile-title">
             <div class="profile__visual">
                 <div class="profile__portrait">
                     <span class="profile__shadow" aria-hidden="true"></span>
-                    <img class="profile__avatar" src="./IMG/portafolio.png" alt="Fotografía profesional de Cleidy Pérez">
+                    <img class="profile__avatar" src="./IMG/portafolio.png"
+                         alt="Fotografía profesional de Cleidy Pérez"
+                         width="260" height="260">
                 </div>
             </div>
             <div class="profile__content">
-                <p class="eyebrow">Hola, soy</p>
-                <h2 class="profile__title" id="profile-title">Cleidy Priscila Pérez Casia</h2>
-                <p class="profile__role">Estudiante de Técnico en Desarrollo de Software</p>
+                <p class="eyebrow" style="justify-content:flex-start; width:auto;">Hola, soy</p>
+                <h2 class="profile__title" id="profile-title">Cleidy Priscila<br>Pérez Casia</h2>
+                <span class="profile__role">Estudiante de Técnico en Desarrollo de Software</span>
                 <p class="profile__description">Apasionada por la tecnología y las soluciones digitales para resolver problemas e incertidumbres que surgen al programar. Cuento con experiencia práctica en Campus Lands, donde he diseñado arquitectura backend, implementado interfaces frontend y trabajado en la seguridad y funcionalidad de aplicaciones web.</p>
                 <p class="profile__description">Más allá de las líneas de código, me defino como una persona alegre, sociable, amable y profundamente empática. Creo firmemente que el mejor software nace de la escucha activa, el trabajo en equipo y una comunicación abierta.</p>
                 <p class="profile__description">Mi actitud positiva, creatividad y dedicación me permiten transformar retos complejos en experiencias fluidas, funcionales y centradas en el usuario.</p>
+
+                <div class="profile__connect">
+                    <span>Conectemos →</span>
+                    <a href="mailto:perezcleidy069@gmail.com" id="link-email">
+                        <span aria-hidden="true">✉</span> Correo
+                    </a>
+                    <a href="https://github.com/perezcleidy069-sketch" target="_blank" rel="noopener noreferrer" id="link-github">
+                        <span aria-hidden="true">◈</span> GitHub
+                    </a>
+                    <a href="https://www.linkedin.com/in/cleidy-p%C3%A9rez-a107b226b/" target="_blank" rel="noopener noreferrer" id="link-linkedin">
+                        <span aria-hidden="true">◉</span> LinkedIn
+                    </a>
+                </div>
             </div>
         </section>
+
+        <!-- Skills highlight -->
+        <section class="section-block" aria-labelledby="highlights-title">
+            <h2 class="section-title" id="highlights-title">Stack principal</h2>
+            <ul class="skills-list" aria-label="Habilidades principales">
+                <li class="skill">JavaScript</li>
+                <li class="skill">Node.js</li>
+                <li class="skill">React Native</li>
+                <li class="skill">MySQL</li>
+                <li class="skill">HTML &amp; CSS</li>
+                <li class="skill">PostgreSQL</li>
+                <li class="skill">Express.js</li>
+                <li class="skill">Firebase</li>
+            </ul>
+        </section>
     </main>
+
     <footer class="site-footer">
-        <p>&copy; 2026 Cleidy Pérez. Todos los derechos reservados.</p>
+        <p>&copy; 2026 Cleidy Pérez &nbsp;·&nbsp; Todos los derechos reservados</p>
     </footer>
+
+    <div id="toast" role="status" aria-live="polite"></div>
+    <div id="konami-overlay" role="dialog" aria-modal="true" aria-labelledby="konami-title">
+        <div class="konami-content">
+            <p class="konami-title" id="konami-title">✦ CÓDIGO DESBLOQUEADO ✦</p>
+            <p class="konami-sub">¡Encontraste el Easter Egg del Universo CP!</p>
+            <button class="konami-close" id="konami-close">[ ESC ] Cerrar</button>
+        </div>
+    </div>
+
+    <script src="./JS/stars.js" defer></script>
+    <script src="./JS/cursor.js" defer></script>
+    <script src="./JS/game-effects.js" defer></script>
+    <script src="./JS/animations.js" defer></script>
 </body>
 </html>

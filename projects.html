@@ -3,11 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Proyectos destacados de desarrollo web, APIs y gestión de datos creados por Cleidy Pérez.">
+    <meta name="theme-color" content="#07040f">
+    <meta name="description" content="Proyectos destacados de desarrollo web, APIs y gestión de datos creados por Cleidy Pérez — Desarrolladora de Software.">
     <title>Proyectos | Cleidy Pérez</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Orbitron:wght@400;500;700;900&family=JetBrains+Mono:wght@400;500&display=swap">
     <link rel="stylesheet" href="./CSS/style.css">
 </head>
 <body>
+    <canvas id="star-canvas" aria-hidden="true"></canvas>
+
+    <div id="cursor-dot" aria-hidden="true"></div>
+    <div id="cursor-ring" aria-hidden="true"></div>
+    <div class="hud-grid" aria-hidden="true"></div>
+
     <header class="site-header">
         <div class="site-header__inner">
             <a class="brand" href="./index.html" aria-label="Cleidy Pérez, inicio">
@@ -17,7 +27,6 @@
             <nav class="site-nav" aria-label="Navegación principal">
                 <ul class="site-nav__list">
                     <li><a class="site-nav__link" href="./presentacion.html">Sobre mí</a></li>
-                    <li><a class="site-nav__link" href="./information.html">Trayectoria</a></li>
                     <li><a class="site-nav__link" href="./skills.html">Habilidades</a></li>
                     <li><a class="site-nav__link" href="./projects.html" aria-current="page">Proyectos</a></li>
                     <li><a class="site-nav__link" href="./contacts.html">Contacto</a></li>
@@ -25,67 +34,125 @@
             </nav>
         </div>
     </header>
+
     <main class="page-shell">
         <p class="eyebrow">Aprender haciendo</p>
         <h1 class="page-heading">Proyectos destacados</h1>
         <p class="page-intro">Soluciones que combinan desarrollo web, APIs, bases de datos y herramientas para resolver necesidades reales.</p>
-        <section class="project-grid" aria-label="Proyectos destacados">
-            <article class="project-card card">
-                <img class="project-card__image project-card__image--preview" src="./IMG/geekrank-preview.svg" alt="Vista ilustrativa del catálogo y ranking de GeekRank">
-                <div class="project-card__body">
-                    <h2 class="project-card__title">GeekRank · Karen Flix</h2>
-                    <p class="project-card__description">Plataforma para descubrir y valorar películas y series. El frontend consume una API REST independiente para mostrar el catálogo, las reseñas y el ranking, e incluye flujos para usuarios y administradores.</p>
-                    <p class="project-card__description"><strong>Trabajo realizado:</strong> interfaz web y conexión con API en el frontend; endpoints, autenticación y gestión de datos en el backend.</p>
-                    <ul class="project-card__tags" aria-label="Tecnologías">
-                        <li class="project-card__tag">JavaScript</li>
-                        <li class="project-card__tag">Node.js</li>
-                        <li class="project-card__tag">Express</li>
-                        <li class="project-card__tag">MySQL</li>
-                        <li class="project-card__tag">JWT</li>
-                    </ul>
-                    <div class="project-card__links">
-                        <a class="text-link" href="https://github.com/perezcleidy069-sketch/greekrank" target="_blank" rel="noopener noreferrer">Frontend <span aria-hidden="true">&rarr;</span></a>
-                        <a class="text-link" href="https://github.com/perezcleidy069-sketch/karen-flix" target="_blank" rel="noopener noreferrer">API backend <span aria-hidden="true">&rarr;</span></a>
+
+        <!-- Featured project in development -->
+        <section class="section-block" id="projects" aria-labelledby="featured-project-title">
+            <h2 class="section-title" id="featured-project-title">En desarrollo</h2>
+            <article class="resume-card card" id="project-fitkid">
+                <div class="resume-card__top">
+                    <div>
+                        <h3 class="resume-card__title">Fit-Kid</h3>
+                        <p class="resume-card__subtitle">Aplicación móvil &nbsp;·&nbsp; Campus Lands</p>
                     </div>
+                    <span class="resume-card__date" aria-label="Estado: en curso">En curso</span>
                 </div>
-            </article>
-            <article class="project-card card">
-                <img class="project-card__image project-card__image--preview" src="./IMG/gym-cli-preview.svg" alt="Vista ilustrativa del menú de la aplicación Gestión de gimnasio CLI">
-                <div class="project-card__body">
-                    <h2 class="project-card__title">Gestión de gimnasio CLI</h2>
-                    <p class="project-card__description">Aplicación de consola conectada a MySQL para gestionar clientes, metas físicas, rutinas, nutrición, contratos e ingresos y egresos del gimnasio.</p>
-                    <p class="project-card__description"><strong>Trabajo realizado:</strong> organización de módulos CRUD y uso de patrones Factory y Observer.</p>
-                    <ul class="project-card__tags" aria-label="Tecnologías">
-                        <li class="project-card__tag">Node.js</li>
-                        <li class="project-card__tag">MySQL</li>
-                        <li class="project-card__tag">CRUD</li>
-                        <li class="project-card__tag">Factory</li>
-                        <li class="project-card__tag">Observer</li>
-                    </ul>
-                    <div class="project-card__links">
-                        <a class="text-link" href="https://github.com/perezcleidy069-sketch/gestion-gimnasio-cli" target="_blank" rel="noopener noreferrer">Ver proyecto en GitHub <span aria-hidden="true">&rarr;</span></a>
-                    </div>
-                </div>
-            </article>
-            <article class="project-card card">
-                <img class="project-card__image" src="./IMG/proyecto.png" alt="Vista del repositorio del sistema de inventario">
-                <div class="project-card__body">
-                    <h2 class="project-card__title">Sistema de inventario</h2>
-                    <p class="project-card__description">Sistema en Python para administrar productos y permitir que los clientes consulten el inventario general o por categorías.</p>
-                    <p class="project-card__description"><strong>Trabajo realizado:</strong> funciones para gestionar productos y facilitar su consulta por categoría.</p>
-                    <ul class="project-card__tags" aria-label="Tecnologías">
-                        <li class="project-card__tag">Python</li>
-                        <li class="project-card__tag">Inventario</li>
-                    </ul>
-                    <div class="project-card__links">
-                        <a class="text-link" href="https://github.com/perezcleidy069-sketch/Sistema-de-Inventario" target="_blank" rel="noopener noreferrer">Ver proyecto en GitHub <span aria-hidden="true">&rarr;</span></a>
-                    </div>
-                </div>
+                <p class="resume-card__description">Experiencia interactiva para motivar a niñas y niños a hacer ejercicio y mantenerse hidratados mediante 15 niveles. Estoy desarrollando la aplicación con React Native e integración de captura de movimiento en el dispositivo.</p>
+                <ul class="project-card__tags" aria-label="Tecnologías">
+                    <li class="project-card__tag">React Native</li>
+                    <li class="project-card__tag">MediaPipe Pose</li>
+                    <li class="project-card__tag">Firebase</li>
+                    <li class="project-card__tag">AsyncStorage</li>
+                </ul>
             </article>
         </section>
+
+        <!-- Applications grid -->
+        <section class="section-block" id="applications" aria-labelledby="applications-title">
+            <h2 class="section-title" id="applications-title">Aplicaciones destacadas</h2>
+            <div class="project-grid">
+
+                <!-- GeekRank -->
+                <article class="project-card card" id="project-geekrank">
+                    <img class="project-card__image project-card__image--preview"
+                         src="./IMG/geekrank-preview.svg"
+                         alt="Vista ilustrativa del catálogo y ranking de GeekRank"
+                         width="600" height="338">
+                    <div class="project-card__body">
+                        <h2 class="project-card__title">GeekRank · Karen Flix</h2>
+                        <p class="project-card__description">Plataforma para descubrir y valorar películas y series. El frontend consume una API REST independiente para mostrar el catálogo, las reseñas y el ranking, e incluye flujos para usuarios y administradores.</p>
+                        <p class="project-card__description"><strong style="color:var(--text-primary)">Trabajo realizado:</strong> interfaz web y conexión con API en el frontend; endpoints, autenticación y gestión de datos en el backend.</p>
+                        <ul class="project-card__tags" aria-label="Tecnologías">
+                            <li class="project-card__tag">JavaScript</li>
+                            <li class="project-card__tag">Node.js</li>
+                            <li class="project-card__tag">Express</li>
+                            <li class="project-card__tag">MySQL</li>
+                            <li class="project-card__tag">JWT</li>
+                        </ul>
+                        <div class="project-card__links">
+                            <a class="text-link" href="https://github.com/perezcleidy069-sketch/greekrank" target="_blank" rel="noopener noreferrer" id="link-geekrank-fe">Frontend →</a>
+                            <a class="text-link" href="https://github.com/perezcleidy069-sketch/karen-flix" target="_blank" rel="noopener noreferrer" id="link-geekrank-api">API backend →</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Gym CLI -->
+                <article class="project-card card" id="project-gym">
+                    <img class="project-card__image project-card__image--preview"
+                         src="./IMG/gym-cli-preview.svg"
+                         alt="Vista ilustrativa del menú de la aplicación Gestión de gimnasio CLI"
+                         width="600" height="338">
+                    <div class="project-card__body">
+                        <h2 class="project-card__title">Gestión de gimnasio CLI</h2>
+                        <p class="project-card__description">Aplicación de consola conectada a MySQL para gestionar clientes, metas físicas, rutinas, nutrición, contratos e ingresos y egresos del gimnasio.</p>
+                        <p class="project-card__description"><strong style="color:var(--text-primary)">Trabajo realizado:</strong> organización de módulos CRUD y uso de patrones Factory y Observer.</p>
+                        <ul class="project-card__tags" aria-label="Tecnologías">
+                            <li class="project-card__tag">Node.js</li>
+                            <li class="project-card__tag">MySQL</li>
+                            <li class="project-card__tag">CRUD</li>
+                            <li class="project-card__tag">Factory</li>
+                            <li class="project-card__tag">Observer</li>
+                        </ul>
+                        <div class="project-card__links">
+                            <a class="text-link" href="https://github.com/perezcleidy069-sketch/gestion-gimnasio-cli" target="_blank" rel="noopener noreferrer" id="link-gym">Ver en GitHub →</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Sistema de inventario -->
+                <article class="project-card card" id="project-inventory">
+                    <img class="project-card__image"
+                         src="./IMG/proyecto.png"
+                         alt="Vista del repositorio del sistema de inventario"
+                         width="600" height="338">
+                    <div class="project-card__body">
+                        <h2 class="project-card__title">Sistema de inventario</h2>
+                        <p class="project-card__description">Sistema en Python para administrar productos y permitir que los clientes consulten el inventario general o por categorías.</p>
+                        <p class="project-card__description"><strong style="color:var(--text-primary)">Trabajo realizado:</strong> funciones para gestionar productos y facilitar su consulta por categoría.</p>
+                        <ul class="project-card__tags" aria-label="Tecnologías">
+                            <li class="project-card__tag">Python</li>
+                            <li class="project-card__tag">Inventario</li>
+                        </ul>
+                        <div class="project-card__links">
+                            <a class="text-link" href="https://github.com/perezcleidy069-sketch/Sistema-de-Inventario" target="_blank" rel="noopener noreferrer" id="link-inventory">Ver en GitHub →</a>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </section>
     </main>
+
     <footer class="site-footer">
-        <p>&copy; 2026 Cleidy Pérez. Todos los derechos reservados.</p>
+        <p>&copy; 2026 Cleidy Pérez &nbsp;·&nbsp; Todos los derechos reservados</p>
     </footer>
+
+    <div id="toast" role="status" aria-live="polite"></div>
+    <div id="konami-overlay" role="dialog" aria-modal="true" aria-labelledby="konami-title">
+        <div class="konami-content">
+            <p class="konami-title" id="konami-title">✦ CÓDIGO DESBLOQUEADO ✦</p>
+            <p class="konami-sub">¡Encontraste el Easter Egg del Universo CP!</p>
+            <button class="konami-close" id="konami-close">[ ESC ] Cerrar</button>
+        </div>
+    </div>
+
+    <script src="./JS/stars.js" defer></script>
+    <script src="./JS/cursor.js" defer></script>
+    <script src="./JS/game-effects.js" defer></script>
+    <script src="./JS/animations.js" defer></script>
 </body>
 </html>
